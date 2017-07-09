@@ -5,8 +5,5 @@ Early design of the site will utilize Google's material design and bootstrap.
 
 # Live Version of site
 The alpha version of the site is currently live utilizing Heroku and mLab MongoDB Services.
-You can find the site at (microreviews.thebiscaynebay.com)https://microreviews.thebiscaynebay.com
+You can find the site at http://microreviews.thebiscaynebay.com
 The Angular2 code can be found on github.com https://github.com/sherwino/micro-review
-
-
-#Changelog
