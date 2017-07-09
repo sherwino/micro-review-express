@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="login">
+  	<h1 class="login-heading">
+      <strong>Welcome.</strong> Create an account.</h1>
+
+      <% if (typeof errorMessage !== "undefined") { %>
+        <div class="error"> <%= errorMessage %> </div>
+      <% } %>
+
+
+      <form method="post" action='/signup'>
+
+        <span>Name: </span>
+        <input id="name-input" type="text" name="signupName" placeholder="Name" class="input-txt">
+          <br>
+          <br>
+
+          <span>Email: </span>
+          <input id="email-input" type="text" name="signupEmail" placeholder="Email" class="input-txt">
+            <br>
+            <br>
+
+          <span>Password: </span>
+          <input id="password-input" type="password" name="signupPassword" placeholder="Password" class="input-txt">
+          <br>
+
+          <div class="login-footer">
+            <button type="submit" class="btn btn--right">Sign Up </button>
+          </div>
+
+      </form>
+  </div>
+</div>
+
+<p> Do you already have an account?
+  <a href="/login"> Log In </a>
+</p>
+<br>

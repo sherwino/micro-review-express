@@ -1,0 +1,67 @@
+
+<h2>Create a new project</h2>
+<div class='form-tainer row'>
+	<div class="container">
+		<form action='/projects' method='post' enctype='multipart/form-data' novalidate autocomplete="on">
+			<form id="rendered-form">
+				<div class="fb-number form-group field-jobyear">
+					<label for="jobyear" class="fb-number-label"></label>
+					<input placeholder="Job Year" class="form-control" name="jobYear" min="2006" id="jobyear" required="required" aria-required="true" type="number" value="<%= job.jobYear %>">
+				</div>
+
+				<div class="fb-text form-group field-jobnumber">
+					<label for="jobnumber" class="fb-text-label"></label>
+					<input placeholder="Job Number" class="form-control" name="jobNumber" maxlength="8" id="jobnumber" required="required" aria-required="true" value="<%= job.jobNumber %>" type="text">
+				</div>
+
+        <div class="fb-text form-group field-jobname">
+					<label for="jobname" class="fb-text-label"></label>
+					<input placeholder="Job Name" class="form-control" name="jobName" id="jobname" required="required" aria-required="true" value="<%= job.jobName %>" type="text">
+				</div>
+
+        <div class="fb-text form-group field-jobclient">
+					<label for="jobclient" class="fb-text-label"></label>
+					<input placeholder="Client" class="form-control" name="jobClient" id="jobclient" required="required" aria-required="true" value="<%= job.jobClient %>" type="text">
+				</div>
+
+				<div class="fb-text form-group field-jobsubs">
+					<label for="jobsubs" class="fb-text-label"></label>
+					<input placeholder="Subcontractor" class="form-control" name="jobSubs" id="jobsubs" value="<%= job.jobSubs %>" type="text">
+				</div>
+
+				<div class="fb-select form-group field-jobtype">
+					<label for="jobtype" class="fb-select-label">Job Type</label>
+					<select class="form-control" name="jobType" id="jobtype" required="required" aria-required="true">
+              <option value="MEP" selected="true" id="jobtype-0">MEP Design</option>
+              <option value="MEPF" id="jobtype-1">MEPF Design</option>
+              <option value="Elec" id="jobtype-2">Electrical Design</option>
+              <option value="Mech" id="jobtype-3">Mechanical Design</option>
+              <option value="Plb" id="jobtype-4">Plumbing Design</option>
+              <option value="Cx" id="jobtype-5">Commissioning</option>
+              <option value="Rep" id="jobtype-6">Report/Study</option>
+              <option value="As" id="jobtype-7">As Builts</option>
+              <option value="Calcs" id="jobtype-8">Energy / Heat Load Calcs</option>
+              <option value="Struc" id="jobtype-9">Structural Calcs</option>
+          </select>
+				</div>
+
+				<div class="fb-text form-group field-jobfee">
+					<label for="jobfee" class="fb-text-label"></label>
+					<input placeholder="Job Fee" class="form-control" name="jobFee" id="jobfee" value="<%= job.jobFee %>" type="text">
+				</div>
+
+				<div class="fb-text form-group field-jobaddress">
+					<label for="jobaddress" class="fb-text-label"></label>
+					<input placeholder="Job Address" class="form-control" name="jobAddress" id="jobaddress" value="<%= job.jobAddress %>" type="text">
+				</div>
+
+        <div class="fb-file form-group field-jobimg">
+					<label for="jobimg" class="fb-file-label">Job Picture or Rendering</label>
+					<input class="form-control" name="jobImg" id="jobImg" type="file" value="<%= job.jobImg %>" style="background-image:url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+				</div>
+
+				<button type="submit" class="btn btn-primary btn-lg" style="z-index: 1;">
+          Submit
+        </button>
+
+			</form>

@@ -1,0 +1,35 @@
+<div id="sidebar" class="navbar col-md-5 side-right sidebar-nav-fixed affix">
+  <div class="sidebarImg">
+    <img src="<%= job.jobImg %>" class="img-responsive">
+  </div>
+  <hr>
+  <div class="col-xs-5">
+    <strong>
+      <p>Address:</p>
+      <p>Client:</p>
+      <p>Job Fee:</p>
+    </strong>
+
+</div>
+<div class="col-xs-5">
+    <p><%= job.jobAddress %></p>
+    <p><%= job.jobClient %></p>
+    <p>$<%= job.jobFee %></p>
+</div>
+</div>
+
+<div id="masthead">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h2><%= job.jobName %>
+            <p class="lead">Job# <%= job.jobNumber %></p>
+          </h2>
+        </div>
+
+
+      </div><!--/container-->
+      </div><!--/masthead-->
+        </div><!--/right-->
+  	</div><!--/row-->
+</div><!--/container-->
