@@ -13,7 +13,7 @@ authRoutes.get('/signup',
 
   (req, res, next) => {
   res.render('login/signup.ejs', {
-    title:    'Project Man - Signup',
+    title:    'Sign-Up - microReviews',
     layout:   'layouts/signup-layout'
   });
 });
