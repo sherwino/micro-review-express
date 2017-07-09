@@ -1,69 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.min.css">
-    <link rel="stylesheet" href="/stylesheets/login.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  </head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/lib/css/font-awesome.min.css">
+    <!-- Your custom styles (optional) -->
+    <link href="/stylesheets/style.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/lib/css/mdb.min.css" rel="stylesheet">
+</head>
 
   <body class='body-main image-responsive '>
     <header>
-      <nav class="navbar navbar-default navbar-fixed-top navStyle">
-      	<div class="container-fluid">
-      		<div class="navbar-header">
-      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-42BNhS428O39c">
-      				<span class="icon-bar"></span>
-      				<span class="icon-bar"></span>
-      				<span class="icon-bar"></span>
-      			</button>
-      			<a class="navbar-brand" href="/">Project Man</a>
-      		</div>
-      		<div class="collapse navbar-collapse" id="navbar-42BNhS428O39c">
-      			<ul class="nav navbar-nav navbar-right">
-              <% if (typeof user !== 'undefined') { %>
-        			    <li><a href="/projects">Projects</a></li>
-        			    <li><a href="/tasks">Task List</a></li>
-        			    <li><a href="/time">Time Sheet</a></li>
-        			    <li><a href="/expense">Expense Reports</a></li>
-        			    <li><a href ="/logout">Log Out</a></li>
-              <% } %>
-              <% if (typeof user == 'admin') { %>
-                  <li><a href="/reports">Financial Reports</a></li>
-                  <li><a href="/users">Users</a></li>
-                  <li><a href="/expense">Expense Reports</a></li>
-              <% } if (typeof user == 'undefined') { %>
-                  <li><a href="/signup"> Sign Up </a></li>
-                  <li><a href="/login"> Log In </a></li>
-                <% } %>
-      			</ul>
-      		</div>
-      	</div>
+      <!--Navbar-->
+      <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+          <div class="container">
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                  <strong>Navbar</strong>
+              </a>
+              <div class="collapse navbar-collapse" id="navbarNav1">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                          <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link">Browse</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link">Submit a review</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link">About</a>
+                      </li>
+                  </ul>
+                  <form class="form-inline waves-effect waves-light">
+                      <input class="form-control" type="text" placeholder="Search">
+                  </form>
+              </div>
+          </div>
       </nav>
+      <!--/.Navbar-->
     </header>
 
-    <br>
-    <br>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="span4"></div>
-        <div class="span4"><img class="center-block imgScale" src="/images/logo.svg" /></div>
-        <div class="span4"></div>
-      </div>
       <%- body %>
-    <footer>
-      <span>Made with &hearts; at Ironhack by</span>
-      <span>Sherwino</span>
-      <span><a href="/">This is the way back home</a></span>
+
+      <!--Footer-->
+      <footer class="page-footer center-on-small-only">
+
+          <!--Footer Links-->
+          <div class="container-fluid">
+              <div class="row">
+
+                  <!--First column-->
+                  <div class="col-lg-3 offset-lg-1 hidden-lg-down">
+                      <h5 class="title">ABOUT microReviews</h5>
+                      <p>microReviews was developed to better inform manufacturers and consumers about several products.</p>
+
+                      <p>While a consumer wants to make an informed purchase, manufacturers want to know what they did right so that they can sell more products.</p>
+
+                      <p>This site can give everyone the opportunity to express their experiences with the smallest components that make a product.</p>
+                  </div>
+                  <!--/.First column-->
+
+                  <hr class="hidden-md-up">
+
+                  <!--Second column-->
+                  <div class="col-lg-2 col-md-4 offset-lg-1">
+                      <h5 class="title">First column</h5>
+                      <ul>
+                          <li><a href="#!">Link 1</a></li>
+                          <li><a href="#!">Link 2</a></li>
+                          <li><a href="#!">Link 3</a></li>
+                          <li><a href="#!">Link 4</a></li>
+                      </ul>
+                  </div>
+                  <!--/.Second column-->
+
+                  <hr class="hidden-md-up">
+
+                  <!--Third column-->
+                  <div class="col-lg-2 col-md-4">
+                      <h5 class="title">Second column</h5>
+                      <ul>
+                          <li><a href="#!">Link 1</a></li>
+                          <li><a href="#!">Link 2</a></li>
+                          <li><a href="#!">Link 3</a></li>
+                          <li><a href="#!">Link 4</a></li>
+                      </ul>
+                  </div>
+                  <!--/.Third column-->
+
+                  <hr class="hidden-md-up">
+
+                  <!--Fourth column-->
+                  <div class="col-lg-2 col-md-4">
+                      <h5 class="title">Third column</h5>
+                      <ul>
+                          <li><a href="#!">Link 1</a></li>
+                          <li><a href="#!">Link 2</a></li>
+                          <li><a href="#!">Link 3</a></li>
+                          <li><a href="#!">Link 4</a></li>
+                      </ul>
+                  </div>
+                  <!--/.Fourth column-->
+
+              </div>
+          </div>
+          <!--/.Footer Links-->
+
+          <hr>
+          <!--Call to action-->
+          <div class="call-to-action">
+              <h4>Made with &hearts; at Ironhack by Sherwino</h4>
+              <ul>
+                  <li>
+                      <h5>Check me out on github</h5></li>
+                  <li><a target="_blank" href="https://github.com/sherwino" class="btn btn-danger" rel="nofollow">Sherwino</a></li>
+                  <li><a href="/" class="btn btn-default" rel="nofollow">This is the way back home</a></li>
+              </ul>
+          </div>
+          <!--/.Call to action-->
+
     </footer>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="/lib/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/lib/js/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/lib/js/mdb.min.js"></script>
 
   </body>
 </html>
