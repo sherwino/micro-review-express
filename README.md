@@ -11,7 +11,7 @@ I started the website with two user stories. Two examples of how users would uti
 ![meiserTask Dashboard](http://i.imgur.com/c4Q74pU.png)
 
 ### Theodore the designer
-Theodore works for HTC and he is a designer, he is part of the team getting ready to design the next flagship phone. He wants to know what compels people to buy a phone. He knows what HE likes... but he doesn't know what everybody else (the populous) like.
+Theodore works for HTC and he is a designer, he is part of the team getting ready to design the next flagship phone. He wants to know what compels people to buy a phone. He knows what HE likes... but he doesn't know what everybody else likes.
 ![Theodore User Story](http://i.imgur.com/Ebxe6i8.png)
 
 ### Pamela the consumer
