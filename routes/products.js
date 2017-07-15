@@ -1,35 +1,45 @@
 const express          = require('express');
 const aws              = require('aws-sdk');
 const ensure           = require('connect-ensure-login');
-const projectRouter    = express.Router();
+const productAPIroutes = express.Router();
 const multer           = require('multer');
 const multerS3         = require('multer-s3');
 const app              = express();
 const path             = require('path');
 const fs               = require('fs');
                          require('dotenv').config();
-const Project          = require('../models/projectmod.js');
+// in order to create the routes for the products you need to load the model
+const ProductModel     = require('../models/productmod.js');
 const s3               = new aws.S3();
-const year             = new Date().getFullYear();
+
+// before you use Amazon AWS you need to set up the configuration file
+// the AWS module is going to use the values from the .env file
+// that way
 
 aws.config.update({
-  secretAccessKey:  process.env.AWS_ACCESS_KEY_ID,
-  accessKeyId:      process.env.AWS_SECRET_ACCESS_KEY,
-  region:           'us-east-1'
+  secretAccessKey:     process.env.AWS_ACCESS_KEY_ID,
+  accessKeyId:         process.env.AWS_SECRET_ACCESS_KEY,
+  region:              'us-east-1'
   // awsBucket:        process.env.S3_BUCKET
 });
 
+// multer uploads things
+// this version was modified to upload to Amazon S3 simple storage
+
 const myUploader       = multer({
 	storage: multerS3({
-		s3: s3,
-		bucket:       process.env.S3_BUCKET,
-    dirname:      '/uploads',
-    contentType:  multerS3.AUTO_CONTENT_TYPE,
-    // body:         req.file.buffer,
-    ACL:          'public-read-write',
+		s3:                s3,
+		bucket:            process.env.S3_BUCKET,
+    dirname:           '/uploads',
+    contentType:       multerS3.AUTO_CONTENT_TYPE,
+    // body:           req.file.buffer,
+    ACL:               'public-read-write',
     // metadata: (req, file, cb) => {
     //   cb(null, {fieldName: file.fieldname});
     // },
+
+    // the key determines how the file is going to be named
+    // from my understanding all of the files must have unique names
 		key: (req, file, cb) => {
 			console.log(file);
 			cb(null, Date.now().toString() + file.originalname);
@@ -38,12 +48,33 @@ const myUploader       = multer({
 });
 
 
+// LIST OF PRODUCTS ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// when angular makes a get request at this route /api/products
+productAPIroutes.get('/api/products',
+  ensure.ensureLoggedIn('/login'),
+
+  (req, res, next ) => {
+    //give me all of the products, but sort them
+    // { owner:    req.user._id },
+    ProductModel
+    .find()
+    .sort( { _id: 1}) // this might not make sense until we have the dates value we want to show the most relevant products
+    .exec((err, productList) => {
+      if (err) {
+        res.json(err);
+        return;
+      }
+      // instead of rendering a view, you are storing all of the results in a json file
+      // if you navigate to api/products in your browser you should see all of the json files
+      res.json(productList);
+    });
+  });
 
 
-// CREATE NEW PROJECT ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// This route and layout shows the form and everything needed to create project
-projectRouter.get('/projects/new',
-// we need to be logged in to create projects
+// CREATE NEW PRODUCT ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+productAPIroutes.post('/api/products/new',
+// we need to be logged in to create products
   ensure.ensureLoggedIn('/login'),
 
   (req, res, next) => {
@@ -56,7 +87,7 @@ projectRouter.get('/projects/new',
 });
 
 // POST/SEND NEW PROJECT TO DB ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-projectRouter.post('/projects',
+productAPIroutes.post('/projects',
   ensure.ensureLoggedIn('/login'),
 
   //<input type="file name ="projectPhoto">
@@ -116,34 +147,10 @@ projectRouter.post('/projects',
   }
 );
 
-// LIST OF PROJECTS ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-projectRouter.get('/projects',
-  ensure.ensureLoggedIn('/login'),
-
-  (req, res, next ) => {
-    //give me all of the projects, but sort them
-    // { owner:    req.user._id },
-    Project
-    .find()
-    .sort( { jobNumber: 1})
-    .exec((err, projectsList) => {
-      if (err) {
-        next(err);
-        return;
-      }
-      res.render('projects/project-list-view.ejs', {
-        title:              'Project Man - Project Log',
-        layout:             'layouts/list-layout',
-        projects:           projectsList,
-        successMessage:     req.flash('success'),
-        user:               req.user
-      });
-    });
-  });
 
 // SINGLE PROJECT PAGE ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-projectRouter.get('/projects/:id/',
+productAPIroutes.get('/projects/:id/',
   ensure.ensureLoggedIn('/login'),
 
   (req, res, next ) => {
@@ -166,7 +173,7 @@ projectRouter.get('/projects/:id/',
 
 // EDIT PROJECT PAGE ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-projectRouter.get('/projects/:id/edit',
+productAPIroutes.get('/projects/:id/edit',
   ensure.ensureLoggedIn('/login'),
 
   (req, res, next) => {
@@ -192,7 +199,7 @@ projectRouter.get('/projects/:id/edit',
 //
 //                      remeber :id is just a placeholder
 //                      it could be whatever you want
-projectRouter.patch('/projects/:id/edit', (req, res, next) => {
+productAPIroutes.patch('/projects/:id/edit', (req, res, next) => {
   const projectId = req.params.id;
 
   const projectChanges = {
@@ -245,7 +252,7 @@ projectRouter.patch('/projects/:id/edit', (req, res, next) => {
 
 // DELETE PROJECT PAGE ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-projectRouter.post('/projects/:id/delete', (req, res, next) => {
+productAPIroutes.post('/projects/:id/delete', (req, res, next) => {
 //                   calling  :id
   const projectId = req.params.id;
 
@@ -262,7 +269,7 @@ projectRouter.post('/projects/:id/delete', (req, res, next) => {
 
 // SEARCH PROJECT PAGE ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-projectRouter.get('/search', (req, res, next) => {
+productAPIroutes.get('/search', (req, res, next) => {
   const searchTerm = req.query.projectSearchTerm;
   if (!searchTerm) {
     res.render('projects/project-list-view.ejs');
@@ -293,4 +300,4 @@ projectRouter.get('/search', (req, res, next) => {
 });
 
 
-module.exports = projectRouter;
+module.exports = productAPIroutes;
