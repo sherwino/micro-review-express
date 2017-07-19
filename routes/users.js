@@ -1,4 +1,6 @@
+// These are the routes for your profile and user specific pages
 const express = require('express');
+const passport = require('passport');
 const ensure = require('connect-ensure-login');
 const bcrypt = require('bcrypt');
 

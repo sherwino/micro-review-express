@@ -51,7 +51,7 @@ const myUploader       = multer({
 // LIST OF PRODUCTS ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // when angular makes a get request at this route /api/products
 productAPIroutes.get('/api/products',
-  ensure.ensureLoggedIn('/login'),
+  // ensure.ensureLoggedIn('/login'),
 
   (req, res, next ) => {
     //give me all of the products, but sort them
