@@ -64,9 +64,10 @@ app.use(layouts);
 // create a user session
 app.use(session({
   key: "user-session",
-  secret: 'supermeng99',
+  secret: 'angularMicroReviewSite',
   cookie:
   {
+    httpOnly: true,
     maxAge: 86400000,//Life of the cookie in ms... I put 24 hours
     path: '/'
   },
@@ -83,6 +84,10 @@ app.use(flash()); //need to use this after the session was created
 // passport does all of the user authentication
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:4200']
+}));
 
 // if we have a user, use it!
 app.use((req, res, next) => {
@@ -97,20 +102,25 @@ app.use((req, res, next) => {
 ///----------------------------ROUTES HERE ---------------------------
 
 // these are all of the routes we want to access in the app
-// they are required up there ^^^^^^
+// they are const blah = required up there ^^^^^^
 // then used here under the middleware
 // each route has instructions how to handle each type of http request/response for each page
 // get / post / put / update / delete
 
 app.use('/', index);
 
-app.use('/', loginRoutes);
+app.use('/api', loginRoutes);
 
 app.use('/', userRoutes);
 
 app.use(cors());
 
 app.use('/', productAPIroutes);
+
+app.use((req, res, next) => {
+  res.sendFile(__dirname + '/public/site.html');
+});
+
 
 
 ///-------------------------ROUTES ABOVE ------------------------------
