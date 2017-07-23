@@ -54,9 +54,19 @@ var routes = [
     },
     {
         // the login/logout/signup are going to be in the same component like in express
-        path: 'login, logout, signup',
+        path: 'login',
         component: __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */]
-    }
+    },
+    {
+        // the login/logout/signup are going to be in the same component like in express
+        path: 'logout',
+        component: __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */]
+    },
+    {
+        // the login/logout/signup are going to be in the same component like in express
+        path: 'signup',
+        component: __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */]
+    },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -74,28 +84,10 @@ AppRoutingModule = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The whole content below can be removed with the new code.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{title}}!!\n  </h1>\n  <img width=\"300\" src=\"../assets/microReview-Logo.png\" />\n</div>\n<h2>Things to note: </h2>\n<ul>\n  <li>\n    <h2>This is A Work in Progress</h2>\n  </li>\n  <li>\n    <h2>Only 1% Complete <progress value=\"1\" max=\"100\">1% Complete</progress></h2>\n  </li>\n</ul>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <title>{{ title }}</title>\n\n</head>\n\n  <body class='full-bg-img body-main image-responsive '>\n    <header>\n      <!--Navbar-->\n      <nav class=\"navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar\">\n          <div class=\"container\">\n              <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav1\" aria-controls=\"navbarNav1\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n              </button>\n              <a class=\"navbar-brand\" href=\"#\">\n                  <strong>microReviews</strong>\n              </a>\n              <div class=\"collapse navbar-collapse\" id=\"navbarNav1\">\n                  <ul class=\"navbar-nav mr-auto\">\n                      <!-- <li class=\"nav-item active\">\n                          <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\n                      </li> -->\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/browse']\" class=\"nav-link\">Browse</a>\n                      </li>\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/submit']\" class=\"nav-link\">Submit a review</a>\n                      </li>\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/']\" fragment=\"about\" class=\"nav-link\">About</a>\n                      </li>\n                      <li *ngIf=\"isLoggedIn\" class=\"nav-item\">\n                          <a [routerLink]=\"['#about']\"  class=\"nav-link\">About</a>\n                      </li>\n                  </ul>\n                  <form class=\"form-inline waves-effect waves-light\">\n                      <input class=\"form-control\" type=\"text\" placeholder=\"Search\">\n                  </form>\n              </div>\n          </div>\n      </nav>\n      <!--/.Navbar-->\n    </header>\n\n    <div>\n      <router-outlet></router-outlet>\n    </div>\n\n      <!--Footer-->\n      <footer class=\"page-footer center-on-small-only\">\n\n          <!--Footer Links-->\n          <div class=\"container-fluid\">\n              <div class=\"row\">\n\n                  <!--First column-->\n                  <div class=\"col-lg-3 offset-lg-1 hidden-lg-down\">\n                      <h5 class=\"title\" id=\"about\">ABOUT microReviews</h5>\n                      <p>microReviews was developed to better inform manufacturers and consumers about several products.</p>\n\n                      <p>While a consumer wants to make an informed purchase, manufacturers want to know what they did right so that they can sell more products.</p>\n\n                      <p>This site can give everyone the opportunity to express their experiences with the smallest components that make a product.</p>\n                  </div>\n                  <!--/.First column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Second column-->\n                  <div class=\"col-lg-2 col-md-4 offset-lg-1\">\n                      <h5 class=\"title\">First column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Second column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Third column-->\n                  <div class=\"col-lg-2 col-md-4\">\n                      <h5 class=\"title\">Second column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Third column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Fourth column-->\n                  <div class=\"col-lg-2 col-md-4\">\n                      <h5 class=\"title\">Third column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Fourth column-->\n\n              </div>\n          </div>\n          <!--/.Footer Links-->\n\n          <hr>\n          <!--Call to action-->\n          <div class=\"call-to-action\">\n              <h4>Made with &hearts; at Ironhack by Sherwino</h4>\n              <ul>\n                  <li>\n                      <h5>Check me out on github</h5></li>\n                  <li><a target=\"_blank\" href=\"https://github.com/sherwino\" class=\"btn btn-danger\" rel=\"nofollow\">Sherwino</a></li>\n                  <li><a href=\"/\" class=\"btn btn-default\" rel=\"nofollow\">This is the way back home</a></li>\n              </ul>\n          </div>\n          <!--/.Call to action-->\n\n    </footer>\n\n\n  </body>\n</html>\n"
 
 /***/ }),
 
@@ -119,10 +111,10 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/styles.min.css")]
     })
 ], AppComponent);
 
@@ -138,18 +130,19 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__products_products_component__ = __webpack_require__("../../../../../src/app/products/products.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reviews_reviews_component__ = __webpack_require__("../../../../../src/app/reviews/reviews.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__articles_articles_component__ = __webpack_require__("../../../../../src/app/articles/articles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__products_service__ = __webpack_require__("../../../../../src/app/products.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__submit_review_submit_review_component__ = __webpack_require__("../../../../../src/app/submit-review/submit-review.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_completer__ = __webpack_require__("../../../../ng2-completer/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_products_component__ = __webpack_require__("../../../../../src/app/products/products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reviews_reviews_component__ = __webpack_require__("../../../../../src/app/reviews/reviews.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__articles_articles_component__ = __webpack_require__("../../../../../src/app/articles/articles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__submit_review_submit_review_component__ = __webpack_require__("../../../../../src/app/submit-review/submit-review.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -161,6 +154,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
  //a form handling module from angular core
  //a HTTP routing module
+
 //a module that will let me select files and upload them
 // ng2-file-upload is a third party module need to install to use
 // import { FileSelectDirective, FileUploader } from 'ng2-file-upload';
@@ -185,25 +179,26 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__products_products_component__["a" /* ProductsComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__reviews_reviews_component__["a" /* ReviewsComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__articles_articles_component__["a" /* ArticlesComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__comments_comments_component__["a" /* CommentsComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__product_list_product_list_component__["a" /* ProductListComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__submit_review_submit_review_component__["a" /* SubmitReviewComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__home_home_component__["a" /* HomeComponent */]
+            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__products_products_component__["a" /* ProductsComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__reviews_reviews_component__["a" /* ReviewsComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__articles_articles_component__["a" /* ArticlesComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__comments_comments_component__["a" /* CommentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__product_list_product_list_component__["a" /* ProductListComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__submit_review_submit_review_component__["a" /* SubmitReviewComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__home_home_component__["a" /* HomeComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_completer__["a" /* Ng2CompleterModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_12__products_service__["a" /* ProductService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_13__services_product_service__["a" /* ProductService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -260,7 +255,7 @@ var ArticlesComponent = (function () {
     return ArticlesComponent;
 }());
 ArticlesComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-articles',
         template: __webpack_require__("../../../../../src/app/articles/articles.component.html"),
         styles: [__webpack_require__("../../../../../src/app/articles/articles.component.css")]
@@ -321,7 +316,7 @@ var CommentsComponent = (function () {
     return CommentsComponent;
 }());
 CommentsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-comments',
         template: __webpack_require__("../../../../../src/app/comments/comments.component.html"),
         styles: [__webpack_require__("../../../../../src/app/comments/comments.component.css")]
@@ -382,7 +377,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
@@ -415,7 +410,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  login works!\n</p>\n"
+module.exports = "<h1 id=\"login\">Login</h1>\n<br>\n<br>\n<br>\n<p>And if you haven't done so alread....</p>\n<h1 id=\"signup\">Signup</h1>\n<br>\n<br>\n<br>\n"
 
 /***/ }),
 
@@ -443,7 +438,7 @@ var LoginComponent = (function () {
     return LoginComponent;
 }());
 LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-login',
         template: __webpack_require__("../../../../../src/app/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
@@ -476,7 +471,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-list/product-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Search Products</h2>\n\n<!-- If there as an error let the user know on the top of the page -->\n<div class=\" error\" *ngIf=\"errorMessage\"> {{ errorMessage }} </div>\n\n<!-- List all of the products -->\n<div class = \"product-list\">\n  <div *ngFor =\"let oneProduct of products\">\n    <img [src]=\"oneProduct.image\">\n    <h3> {{ oneProduct.name }} </h3>\n    <h4><i> {{ oneProduct.brand }} </i> </h4>\n\n    <!-- Using the router, find the product by the id and lets see details page -->\n    <!-- <a [routerLink]='product, oneProduct._id'>Details</a> -->\n\n  </div>\n</div>\n"
+module.exports = "<h2>Browse for Products</h2>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<!-- If there as an error let the user know on the top of the page -->\n<div class=\" error\" *ngIf=\"errorMessage\"> {{ errorMessage }} </div>\n\n<!-- List all of the products -->\n<div class = \"product-list\">\n  <div *ngFor =\"let oneProduct of products\">\n    <img [src]=\"oneProduct.image\">\n    <h3> {{ oneProduct.name }} </h3>\n    <h4><i> {{ oneProduct.brand }} </i> </h4>\n\n    <!-- Using the router, find the product by the id and lets see details page -->\n    <!-- <a [routerLink]='product, oneProduct._id'>Details</a> -->\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -485,7 +480,7 @@ module.exports = "<h2>Search Products</h2>\n\n<!-- If there as an error let the 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__products_service__ = __webpack_require__("../../../../../src/app/products.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -503,6 +498,7 @@ var ProductListComponent = (function () {
         this.myProductService = myProductService;
         this.products = [];
         this.errorMessage = ''; //not sure why I need this here yet
+        this.title = "microReviews - Browse";
     }
     ProductListComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -517,12 +513,12 @@ var ProductListComponent = (function () {
     return ProductListComponent;
 }());
 ProductListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-product-list',
         template: __webpack_require__("../../../../../src/app/product-list/product-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/product-list/product-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__products_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__products_service__["a" /* ProductService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object])
 ], ProductListComponent);
 
 var _a;
@@ -530,7 +526,190 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/products.service.ts":
+/***/ "../../../../../src/app/products/products.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/products/products.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  products works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/products/products.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductsComponent = (function () {
+    function ProductsComponent() {
+    }
+    ProductsComponent.prototype.ngOnInit = function () {
+    };
+    return ProductsComponent;
+}());
+ProductsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'app-products',
+        template: __webpack_require__("../../../../../src/app/products/products.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/products/products.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductsComponent);
+
+//# sourceMappingURL=products.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/profile/profile.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/profile/profile.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  profile works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/profile/profile.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProfileComponent = (function () {
+    function ProfileComponent() {
+    }
+    ProfileComponent.prototype.ngOnInit = function () {
+    };
+    return ProfileComponent;
+}());
+ProfileComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'app-profile',
+        template: __webpack_require__("../../../../../src/app/profile/profile.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/profile/profile.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProfileComponent);
+
+//# sourceMappingURL=profile.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/reviews/reviews.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/reviews/reviews.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  reviews works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/reviews/reviews.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ReviewsComponent = (function () {
+    function ReviewsComponent() {
+    }
+    ReviewsComponent.prototype.ngOnInit = function () {
+    };
+    return ReviewsComponent;
+}());
+ReviewsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'app-reviews',
+        template: __webpack_require__("../../../../../src/app/reviews/reviews.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/reviews/reviews.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ReviewsComponent);
+
+//# sourceMappingURL=reviews.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/product.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -596,11 +775,11 @@ ProductService = __decorate([
 ], ProductService);
 
 var _a;
-//# sourceMappingURL=products.service.js.map
+//# sourceMappingURL=product.service.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/products/products.component.css":
+/***/ "../../../../../src/app/styles.min.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -608,178 +787,13 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".full-bg-img{background:url(" + __webpack_require__("../../../../../src/assets/caps.jpg") + ")}.view:not(.hm-zoom){overflow:visible}.container .row{margin-top:2.5rem}.simple-blog-listing .single-post{margin-bottom:5rem}.simple-blog-listing .single-post.simple-post-text{margin-bottom:0;border-bottom:1px solid #e0e0e0}.simple-blog-listing .single-post.simple-post-text .post-pictures img{margin-bottom:1.5rem}.simple-blog-listing .single-post h5{text-align:center;margin-bottom:1.5rem}.simple-blog-listing .single-post h2{text-align:center;margin-top:2rem;margin-bottom:1.2rem}.simple-blog-listing .single-post .post-data h5{margin-bottom:2rem;font-weight:400}.simple-blog-listing .single-post .post-data h5 i{padding-left:1rem}.archive ul li{padding-top:0.8rem;border-top:1px solid #eceeef;padding-bottom:0.3rem}.archive ul li:first-of-type{border-top:none}.simple-author-widget .author-photo{margin-bottom:1.8rem}.simple-author-widget .about-author h4{text-align:center;margin-bottom:1.5rem}.simple-author-widget .about-author p{text-align:justify}.simple-author-page h1{margin-bottom:2rem}.simple-author-page p{text-align:center}.simple-author-page .view img{margin-top:2rem}\n", ""]);
 
 // exports
 
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/products/products.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  products works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/products/products.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ProductsComponent = (function () {
-    function ProductsComponent() {
-    }
-    ProductsComponent.prototype.ngOnInit = function () {
-    };
-    return ProductsComponent;
-}());
-ProductsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-        selector: 'app-products',
-        template: __webpack_require__("../../../../../src/app/products/products.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/products/products.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], ProductsComponent);
-
-//# sourceMappingURL=products.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/profile/profile.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/profile/profile.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  profile works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/profile/profile.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ProfileComponent = (function () {
-    function ProfileComponent() {
-    }
-    ProfileComponent.prototype.ngOnInit = function () {
-    };
-    return ProfileComponent;
-}());
-ProfileComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-        selector: 'app-profile',
-        template: __webpack_require__("../../../../../src/app/profile/profile.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/profile/profile.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], ProfileComponent);
-
-//# sourceMappingURL=profile.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/reviews/reviews.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/reviews/reviews.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  reviews works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/reviews/reviews.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ReviewsComponent = (function () {
-    function ReviewsComponent() {
-    }
-    ReviewsComponent.prototype.ngOnInit = function () {
-    };
-    return ReviewsComponent;
-}());
-ReviewsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-        selector: 'app-reviews',
-        template: __webpack_require__("../../../../../src/app/reviews/reviews.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/reviews/reviews.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], ReviewsComponent);
-
-//# sourceMappingURL=reviews.component.js.map
 
 /***/ }),
 
@@ -791,7 +805,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/*Submit Review Form*/\n.review-form {\n  margin: 0 25%;\n  max-width: 600px;\n  background: rgba(255, 255, 255, 0.80);\n  padding: 10px 45px;\n}\n\nng2-completer {\n  border: 0px;\n  box-shadow: none;\n  /*background: #fff;*/\n  border-radius: 2px;\n  padding: 2px;\n}\n", ""]);
 
 // exports
 
@@ -804,7 +818,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/submit-review/submit-review.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Submit a New Review</h2>\n<a [routerLink]=\"['']\"> Back to list </a>\n\n<form (ngSubmit)=\"newReviewObject(datafromform)\" #myForm=\"ngForm\">\n  <p>\n    Brand: <small><i>Apple</i></small>\n    <input type=\"text\" name=\"brand\" [(ngModel)]=\"brand\" required />\n  </p>\n  <p>\n    Model Name: <small><i>iPhone 6s Plus</i></small>\n    <input type=\"text\" name=\"modelName\" [(ngModel)]=\"modelName\" required />\n  </p>\n  <p>\n    Model Number: <small><i>A1633</i></small>\n    <input type=\"text\" name=\"modelNum\" [(ngModel)]=\"modelNum\" required />\n  </p>\n  <p>\n    Product's UPC: <small><i>700362685371</i></small>\n    <input type=\"text\" name=\"prodUPC\" [(ngModel)]=\"prodUPC\" required />\n  </p>\n  <p>\n    Manufactured By: <small><i>Foxcomm, Samsung, Carl Zeiss, Dolby Labs</i></small>\n    <input type=\"text\" name=\"mfgBy\" [(ngModel)]=\"mfgBy\" required />\n  </p>\n  <p>\n    Product Components: <small><i>Camera, Microphone, Speaker, Compass</i></small>\n    <input type=\"text\" name=\"prodParts\" [(ngModel)]=\"prodParts\" required />\n  </p>\n  <p>\n    Product Image: <small><i>Upload an image of the product</i></small>\n    <input type=\"text\" name=\"prodImg\" [(ngModel)]=\"prodImg\" required />\n  </p>\n  <button (click)=\"submit()\"> submit </button>\n</form>\n\n<a [routerLink]=\"['']\"> Back to list </a>\n\n<p> {{ feedback }} </p>\n"
+module.exports = "<h2>Submit a New Review</h2>\n\n\n<a [routerLink]=\"['/browse']\"> Back to list </a>\n<div class=\"review-form\">\n  <form (ngSubmit)=\"newReviewObject(datafromform)\" #myForm=\"ngForm\">\n    <div class=\"form-group\">\n      <p>\n        Brand: <small><i>Apple</i></small>\n        <ng2-completer [(ngModel)]=\"searchStr\" [datasource]=\"captains\" [minSearchLength]=\"0\"\n        class=\"form-control\" type=\"text\" name=\"brand\" required ></ng2-completer>\n      </p>\n      <p>\n        Model Name: <small><i>iPhone 6s Plus</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"modelName\" [(ngModel)]=\"modelName\" required />\n      </p>\n      <p>\n        Model Number: <small><i>A1633</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"modelNum\" [(ngModel)]=\"modelNum\" required />\n      </p>\n      <p>\n        Product's UPC: <small><i>700362685371</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"prodUPC\" [(ngModel)]=\"prodUPC\" required />\n      </p>\n      <p>\n        Manufactured By: <small><i>Foxcomm, Samsung, Carl Zeiss, Dolby Labs</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"mfgBy\" [(ngModel)]=\"mfgBy\" required />\n      </p>\n      <p>\n        Product Components: <small><i>Camera, Microphone, Speaker, Compass</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"prodParts\" [(ngModel)]=\"prodParts\" required />\n      </p>\n    </div>\n    <div class=\"form-group\">\n      <p>\n        Product Image: <small><i>Upload an image of the product</i></small>\n        <input class=\"form-control-file\" type=\"text\" name=\"prodImg\" [(ngModel)]=\"prodImg\" required />\n      </p>\n    </div>\n    <button class=\"btn btn-primary\" (click)=\"submit()\"> submit </button>\n  </form>\n</div>\n\n<a [routerLink]=\"['/browse']\"> Back to list </a>\n\n<p> {{ feedback }} </p>\n"
 
 /***/ }),
 
@@ -814,7 +828,8 @@ module.exports = "<h2>Submit a New Review</h2>\n<a [routerLink]=\"['']\"> Back t
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__products_service__ = __webpack_require__("../../../../../src/app/products.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_completer__ = __webpack_require__("../../../../ng2-completer/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubmitReviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -828,13 +843,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SubmitReviewComponent = (function () {
     function SubmitReviewComponent(
         // creating a routing instance in this view
-        myRoute, myProductService, myRouter) {
+        myRoute, myProductService, myRouter, 
+        // the AutoCompleteService
+        completerService) {
         this.myRoute = myRoute;
         this.myProductService = myProductService;
         this.myRouter = myRouter;
+        this.completerService = completerService;
+        this.searchData = [
+            { color: 'red', value: '#f00' },
+            { color: 'green', value: '#0f0' },
+            { color: 'blue', value: '#00f' },
+            { color: 'cyan', value: '#0ff' },
+            { color: 'magenta', value: '#f0f' },
+            { color: 'yellow', value: '#ff0' },
+            { color: 'black', value: '#000' }
+        ];
+        this.captains = ['James T. Kirk', 'Benjamin Sisko', 'Jean-Luc Picard', 'Spock', 'Jonathan Archer', 'Hikaru Sulu', 'Christopher Pike', 'Rachel Garrett'];
+        this.dataService = completerService.local(this.searchData, 'color', 'color');
     }
     ;
     SubmitReviewComponent.prototype.ngOnInit = function () {
@@ -854,8 +884,8 @@ var SubmitReviewComponent = (function () {
         this.modelNum = datafromform.form.controls.modelNum._value;
         this.prodUPC = datafromform.form.controls.prodUPC._value;
         this.mfgBy = datafromform.form.controls.mfgBy._value.split(",");
-        // this.mfgStart =     datafromform.form.controls.mfgStart._value;
-        // this.mfgEnd =       datafromform.form.controls.mfgEnd._value;
+        // this.mfgStart =  datafromform.form.controls.mfgStart._value;
+        // this.mfgEnd =    datafromform.form.controls.mfgEnd._value;
         this.prodParts = datafromform.form.controls.prodParts._value.split(",");
         this.prodImg = datafromform.form.controls.prodImg._value;
         // then lets call the function that is going to submit all of this info to the backend express app
@@ -892,16 +922,24 @@ var SubmitReviewComponent = (function () {
     return SubmitReviewComponent;
 }());
 SubmitReviewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'app-submit-review',
         template: __webpack_require__("../../../../../src/app/submit-review/submit-review.component.html"),
         styles: [__webpack_require__("../../../../../src/app/submit-review/submit-review.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__products_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__products_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_completer__["b" /* CompleterService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_completer__["b" /* CompleterService */]) === "function" && _d || Object])
 ], SubmitReviewComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
+//https://api.upcitemdb.com/prod/trial/search?s=MacBook%20Pro&brand=Apple&match_mode=0&type=product
 //# sourceMappingURL=submit-review.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/assets/caps.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "caps.7632d285d546445d49a8.jpg";
 
 /***/ }),
 
@@ -914,9 +952,11 @@ var _a, _b, _c;
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
+// DEVELOPMENT vars
 // The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false
+    production: false,
+    apiUrl: 'http://localhost:3000'
 };
 //# sourceMappingURL=environment.js.map
 
