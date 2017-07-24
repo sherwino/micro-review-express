@@ -4,35 +4,15 @@ const User = require('./usermod.js');
 
 const Schema = mongoose.Schema;
 
-const projectSchema = new Schema(
+const productSchema = new Schema(
   {
-    jobYear:        Number,
-    jobNumber:      String,
-    jobName:        String,
-    jobClient:      String,
-    jobSubs:        String,
-    jobType:        String,
-    jobFee:         String,
-    jobAddress:     String,
-    jobMasterperm:  String,
-    jobPlbperm:     String,
-    jobMechperm:    String,
-    jobGasperm:     String,
-    jobElecperm:    String,
-    jobOtherPerm:   String,
-    jobChangeorder: String,
-    jobReimburse:   String,
-    jobPayroll:     String,
-    jobSubExp:      String,
-    jobAmtInv:      String,
-    jobAmtRec:      String,
-    jobAmtDue:      String,
-    jobAmtRem:      String,
-    jobProfit:      String,
-    jobCurrProfit:  String,
-    jobMaterialExp: String,
-    jobImgName:     String,
-    jobImg:         String,
+    prodBrand:     { type: String, required: true },
+    prodName:      { type: String, required: true },
+    prodModel:     { type: String, required: true },
+    prodUPC:       { type: String, required: false },
+    prodMfg:       { type: String, required: false },
+    prodParts:     { type: String, required: false },
+    prodImg:       { type: String, required: false },
 
     //reference the id of the user
     createdBy:          { type: Schema.Types.ObjectId },
@@ -47,6 +27,6 @@ const projectSchema = new Schema(
 
 );
 
-const Project = mongoose.model('Project', projectSchema);
+const Product = mongoose.model('Product', productSchema);
 
-module.exports = Project;
+module.exports = Product;

@@ -61,92 +61,57 @@ productAPIroutes.get('/api/products',
     .sort( { _id: 1}) // this might not make sense until we have the dates value we want to show the most relevant products
     .exec((err, productList) => {
       if (err) {
-        res.json(err);
+        res.status(500).json({ message: 'Could not find any products'});
         return;
       }
       // instead of rendering a view, you are storing all of the results in a json file
       // if you navigate to api/products in your browser you should see all of the json files
-      res.json(productList);
-    });
-  });
+      res.status(200).json(productList);
+    }); //close exec()
+  }); //close get '/api/lits'
 
 
 // CREATE NEW PRODUCT ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-productAPIroutes.post('/api/products/new',
+productAPIroutes.post('/api/products',
 // we need to be logged in to create products
-  ensure.ensureLoggedIn('/login'),
+// we propbably should use something other than ensure
+// ensure.ensureLoggedIn('/login'),
+(req, res, next) => {
+      const theProduct = new ProductModel({
+        prodBrand:     req.body.brand,
+        prodName:      req.body.modelName,
+        prodModel:     req.body.modelNum,
+        prodUPC:       req.body.prodUPC,
+        prodMfg:       req.body.mfgBy,
+        prodParts:     req.body.prodParts,
+        prodImg:       req.body.prodImg,
 
-  (req, res, next) => {
-    res.render('projects/new-project-view.ejs', {
-      title:    'Project Man - Create a project',
-      layout:   'layouts/list-layout',
-      currYear:  year
-    });
+      });
+      //
+      // ProductModel
+      // .findOne({ owner: req.user._id })
+      // .sort({ position: -1 })
+      // .exec((err, productList) => {
+      // (err, productList) => {
+      //   if (err) {
+      //     res.status(500).json({ message: 'Something went wrong posting that'});
+      //     return;
+      //   }
 
-});
 
 // POST/SEND NEW PROJECT TO DB ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-productAPIroutes.post('/projects',
-  ensure.ensureLoggedIn('/login'),
 
-  //<input type="file name ="projectPhoto">
-                      //  |
-  myUploader.single('jobImg'),
-
-  (req, res, next) => {
-
-    console.log('FILE UPLOAD ------------------------');
-    console.log('Successfully uploaded ' + req.file);
-    // res.status(204).end();
-    const theProject = new Project ({
-
-      //the key is from the model, and the value is from the input form
-      jobYear:        req.body.jobYear,
-      jobNumber:      req.body.jobNumber,
-      jobName:        req.body.jobName,
-      jobClient:      req.body.jobClient,
-      jobSubs:        req.body.jobSubs,
-      jobType:        req.body.jobType,
-      jobFee:         req.body.jobFee,
-      jobImg:         `${req.file.location}`,
-      // jobRenderImg:   `/uploads/${req.body.picName}`,
-      jobAddress:     req.body.jobAddress,
-      jobMasterperm:  req.body.jobMasterperm,
-      jobPlbperm:     req.body.jobPlbperm,
-      jobMechperm:    req.body.jobMechperm,
-      jobGasperm:     req.body.jobGasperm,
-      jobElecperm:    req.body.jobElecperm,
-      jobOtherPerm:   req.body.jobOtherPerm,
-      jobChangeorder: req.body.jobChangeorder,
-      jobReimburse:   req.body.jobReimburse,
-      jobPayroll:     req.body.jobPayroll,
-      jobSubExp:      req.body.jobSubExp,
-      jobAmtInv:      req.body.jobAmtInv,
-      jobAmtRec:      req.body.jobAmtRec,
-      jobAmtDue:      req.body.jobAmtDue,
-      jobAmtRem:      req.body.jobAmtRem,
-      jobProfit:      req.body.jobProfit,
-      jobCurrProfit:  req.body.jobCurrProfit,
-      jobMaterialExp: req.body.jobMaterialExp,
-      createdBy:      req.user._id,
-      updatedBy:      req.user._id
-
-    });
-
-    theProject.save((err) => {
-      console.log('attempted to post form into DB');
+    theProduct.save((err) => {
+      console.log(theProduct);
       if (err) {
-        next(err);
+        res.status(500).json({ message: 'System was not able to save the new product'});
         return;
       }
-
-      req.flash('success', 'Your project was saved succesfully');
-      res.redirect('/projects');
+      res.status(200).json(product);
     });
-  }
-);
-
+// }); //close exec()
+}); //close the post route '/api/lists'
 
 // SINGLE PROJECT PAGE ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
