@@ -14,13 +14,13 @@ const authRoutes    = express.Router();
 // localhost:3000/api/signup
 
 //--------------------------------SIGN UP (POST) ----------------------
-authRoutes.post('/signup', (req, res, next) => {
-  const signName      = req.body.signupName;
-  const signEmail     = req.body.signupEmail;
-  const signPassword  = req.body.signupPassword;
+authRoutes.post('/api/signup', (req, res, next) => {
+  const signupName      = req.body.signupName;
+  const signupEmail     = req.body.signupEmail;
+  const signupPassword  = req.body.signupPassword;
 
   //Don't let users submit blank anything
-  if (signEmail === '' || signPassword === '' || signName === '') {
+  if (!signupEmail || !signupPassword || !signupName) {
     res.status(400).json({ message: 'You need to provide a name, email, and, password to join'});
     return;
   }
@@ -30,7 +30,7 @@ authRoutes.post('/signup', (req, res, next) => {
     // first we want to see if this email is taken
     // email: is the DB key
     // signEmail is the variable I created above, it is from form/middleware
-    { email: signEmail },
+    { email: signupEmail },
     //second argument is the projection, which field you want to see
     // don't really need to make a projection unless if I wanted to console results
     { email: 1 },
@@ -43,8 +43,7 @@ authRoutes.post('/signup', (req, res, next) => {
       }
       //Don't let the user register if the email is taken
       if (foundUser) {
-        res.status(400).json({ message: `That email has already been taken
-          by another user...or you might already have an account`});
+        res.status(400).json({ message: 'That email has already been taken'});
           return;
         }
         //once you get to this point you should be able to save the user
@@ -52,12 +51,12 @@ authRoutes.post('/signup', (req, res, next) => {
         //encrypt the password that the user submitted
         // just throw some salt on that ishh
         const salt     = bcrypt.genSaltSync(10);
-        const hashPass = bcrypt.hashSync(signPassword, salt);
+        const hashPass = bcrypt.hashSync(signupPassword, salt);
 
         //create the user
         const theUser = new User({
-          name:               signName,
-          email:              signEmail,
+          name:               signupName,
+          email:              signupEmail,
           password:           hashPass
 
         });
@@ -86,7 +85,7 @@ authRoutes.post('/signup', (req, res, next) => {
 
 //--------------------------------LOG IN (POST) ----------------------
 
-authRoutes.post('/login',
+authRoutes.post('/api/login',
 
 //redirects to root if you Are Logged In
 ensure.ensureNotLoggedIn('/'),

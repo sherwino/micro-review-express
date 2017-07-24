@@ -16,15 +16,15 @@ const userSchema = new Schema(
   password:   {
     type:     String
     // required: [true, "You need to enter a password"]
-  },
-  img:        {
-    type:     String,
-    default:  'http://i.imgur.com/h7sBCDN.png'
-  },
-  role:      {
-    type:     String,
-    default:  'user'
   }
+  // img:        {
+  //   type:     String,
+  //   default:  'http://i.imgur.com/h7sBCDN.png'
+  // },
+  // role:      {
+  //   type:     String,
+  //   default:  'user'
+  // }
 }
 ); //closes userSchema
 

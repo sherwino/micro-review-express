@@ -109,7 +109,7 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 
-app.use('/api', loginRoutes);
+app.use('/', loginRoutes);
 
 app.use('/', userRoutes);
 
