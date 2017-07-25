@@ -78,40 +78,56 @@ productAPIroutes.post('/api/products',
 // we propbably should use something other than ensure
 // ensure.ensureLoggedIn('/login'),
 (req, res, next) => {
-      const theProduct = new ProductModel({
-        prodBrand:     req.body.brand,
-        prodName:      req.body.modelName,
-        prodModel:     req.body.modelNum,
-        prodUPC:       req.body.prodUPC,
-        prodMfg:       req.body.mfgBy,
-        prodParts:     req.body.prodParts,
-        prodImg:       req.body.prodImg,
+  const theprodBrand =     req.body.brand;
+  const theprodName =      req.body.modelName;
+  const theprodModel =     req.body.modelNum;
+  const theprodUPC =       req.body.prodUPC;
+  const theprodMfg =       req.body.mfgBy;
+  const theprodParts =     req.body.prodParts;
+  const theprodImg =       req.body.prodImg;
 
-      });
-      //
-      // ProductModel
-      // .findOne({ owner: req.user._id })
-      // .sort({ position: -1 })
-      // .exec((err, productList) => {
-      // (err, productList) => {
-      //   if (err) {
-      //     res.status(500).json({ message: 'Something went wrong posting that'});
-      //     return;
-      //   }
+  if (!theprodBrand || !theprodName ) {
+    res.status(400).json({ message: 'Please submit brand and model before proceeding'});
+    return;
+  }
 
-
-// POST/SEND NEW PROJECT TO DB ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    theProduct.save((err) => {
-      console.log(theProduct);
+  ProductModel.findOne(
+    { prodName: theprodName },
+    (err, prodFromDB) => {
       if (err) {
-        res.status(500).json({ message: 'System was not able to save the new product'});
+        res.status(500).json({ message: 'Something went wrong trying to check if the product existed'});
         return;
       }
-      res.status(200).json(product);
+      if (prodFromDB) {
+        res.status(400).json({ message: 'The product already exist on the site, search for it above'});
+        return;
+      }
+      const theProduct = new ProductModel({
+        prodBrand:     theprodBrand,
+        prodName:      theprodName,
+        prodModel:     theprodModel,
+        prodUPC:       theprodUPC,
+        prodMfg:       theprodMfg,
+        prodParts:     theprodParts,
+        prodImg:       theprodImg,
+
+      });
+      // POST/SEND NEW PROJECT TO DB ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+      theProduct.save((err) => {
+        console.log(theProduct);
+        if (err) {
+          res.status(500).json({ message: 'System was not able to save the new product'});
+          return;
+        }
+        res.status(200).json(theProduct);
+      });
     });
-// }); //close exec()
-}); //close the post route '/api/lists'
+}); //close the post route
+
+
+
+
 
 // SINGLE PROJECT PAGE ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
