@@ -87,7 +87,7 @@ AppRoutingModule = __decorate([
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <title>{{ title }}</title>\n\n</head>\n\n  <body class='full-bg-img body-main image-responsive '>\n    <header>\n      <!--Navbar-->\n      <nav class=\"navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar\">\n          <div class=\"container\">\n              <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav1\" aria-controls=\"navbarNav1\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n              </button>\n              <a class=\"navbar-brand\" href=\"#\">\n                  <strong>microReviews</strong>\n              </a>\n              <div class=\"collapse navbar-collapse\" id=\"navbarNav1\">\n                  <ul class=\"navbar-nav mr-auto\">\n                      <!-- <li class=\"nav-item active\">\n                          <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\n                      </li> -->\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/browse']\" class=\"nav-link\">Browse</a>\n                      </li>\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/submit']\" class=\"nav-link\">Submit a review</a>\n                      </li>\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/']\" fragment=\"about\" class=\"nav-link\">About</a>\n                      </li>\n                      <li *ngIf=\"isLoggedIn\" class=\"nav-item\">\n                          <a [routerLink]=\"['#about']\"  class=\"nav-link\">About</a>\n                      </li>\n                  </ul>\n                  <form class=\"form-inline waves-effect waves-light\">\n                      <input class=\"form-control\" type=\"text\" placeholder=\"Search\">\n                  </form>\n              </div>\n          </div>\n      </nav>\n      <!--/.Navbar-->\n    </header>\n\n    <div>\n      <router-outlet></router-outlet>\n    </div>\n\n      <!--Footer-->\n      <footer class=\"page-footer center-on-small-only\">\n\n          <!--Footer Links-->\n          <div class=\"container-fluid\">\n              <div class=\"row\">\n\n                  <!--First column-->\n                  <div class=\"col-lg-3 offset-lg-1 hidden-lg-down\">\n                      <h5 class=\"title\" id=\"about\">ABOUT microReviews</h5>\n                      <p>microReviews was developed to better inform manufacturers and consumers about several products.</p>\n\n                      <p>While a consumer wants to make an informed purchase, manufacturers want to know what they did right so that they can sell more products.</p>\n\n                      <p>This site can give everyone the opportunity to express their experiences with the smallest components that make a product.</p>\n                  </div>\n                  <!--/.First column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Second column-->\n                  <div class=\"col-lg-2 col-md-4 offset-lg-1\">\n                      <h5 class=\"title\">First column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Second column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Third column-->\n                  <div class=\"col-lg-2 col-md-4\">\n                      <h5 class=\"title\">Second column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Third column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Fourth column-->\n                  <div class=\"col-lg-2 col-md-4\">\n                      <h5 class=\"title\">Third column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Fourth column-->\n\n              </div>\n          </div>\n          <!--/.Footer Links-->\n\n          <hr>\n          <!--Call to action-->\n          <div class=\"call-to-action\">\n              <h4>Made with &hearts; at Ironhack by Sherwino</h4>\n              <ul>\n                  <li>\n                      <h5>Check me out on github</h5></li>\n                  <li><a target=\"_blank\" href=\"https://github.com/sherwino\" class=\"btn btn-danger\" rel=\"nofollow\">Sherwino</a></li>\n                  <li><a href=\"/\" class=\"btn btn-default\" rel=\"nofollow\">This is the way back home</a></li>\n              </ul>\n          </div>\n          <!--/.Call to action-->\n\n    </footer>\n\n\n  </body>\n</html>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <title>{{ title }}</title>\n\n</head>\n\n  <body class='full-bg-img body-main image-responsive'>\n    <header>\n      <!--Navbar-->\n      <nav class=\"navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar\">\n          <div class=\"container\">\n              <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav1\" aria-controls=\"navbarNav1\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n              </button>\n              <a class=\"navbar-brand\" href=\"#\">\n                  <strong>microReviews</strong>\n              </a>\n              <div class=\"collapse navbar-collapse\" id=\"navbarNav1\">\n                  <ul class=\"navbar-nav mr-auto\">\n                      <!-- <li class=\"nav-item active\">\n                          <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\n                      </li> -->\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/browse']\" class=\"nav-link\">Browse</a>\n                      </li>\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/submit']\" class=\"nav-link\">Submit a review</a>\n                      </li>\n                      <li class=\"nav-item\">\n                          <a [routerLink]=\"['/']\" fragment=\"about\" class=\"nav-link\">About</a>\n                      </li>\n                      <li *ngIf=\"isLoggedIn\" class=\"nav-item\">\n                          <a [routerLink]=\"['#about']\"  class=\"nav-link\">About</a>\n                      </li>\n                  </ul>\n                  <form class=\"form-inline waves-effect waves-light\">\n                      <input class=\"form-control\" type=\"text\" placeholder=\"Search\">\n                  </form>\n              </div>\n          </div>\n      </nav>\n      <!--/.Navbar-->\n    </header>\n\n    <div>\n      <router-outlet></router-outlet>\n    </div>\n\n      <!--Footer-->\n      <footer class=\"page-footer center-on-small-only\">\n\n          <!--Footer Links-->\n          <div class=\"container-fluid\">\n              <div class=\"row\">\n\n                  <!--First column-->\n                  <div class=\"col-lg-3 offset-lg-1 hidden-lg-down\">\n                      <h5 class=\"title\" id=\"about\">ABOUT microReviews</h5>\n                      <p>microReviews was developed to better inform manufacturers and consumers about several products.</p>\n\n                      <p>While a consumer wants to make an informed purchase, manufacturers want to know what they did right so that they can sell more products.</p>\n\n                      <p>This site can give everyone the opportunity to express their experiences with the smallest components that make a product.</p>\n                  </div>\n                  <!--/.First column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Second column-->\n                  <div class=\"col-lg-2 col-md-4 offset-lg-1\">\n                      <h5 class=\"title\">First column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Second column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Third column-->\n                  <div class=\"col-lg-2 col-md-4\">\n                      <h5 class=\"title\">Second column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Third column-->\n\n                  <hr class=\"hidden-md-up\">\n\n                  <!--Fourth column-->\n                  <div class=\"col-lg-2 col-md-4\">\n                      <h5 class=\"title\">Third column</h5>\n                      <ul>\n                          <li><a href=\"#!\">Link 1</a></li>\n                          <li><a href=\"#!\">Link 2</a></li>\n                          <li><a href=\"#!\">Link 3</a></li>\n                          <li><a href=\"#!\">Link 4</a></li>\n                      </ul>\n                  </div>\n                  <!--/.Fourth column-->\n\n              </div>\n          </div>\n          <!--/.Footer Links-->\n\n          <hr>\n          <!--Call to action-->\n          <div class=\"call-to-action\">\n              <h4>Made with &hearts; at Ironhack by Sherwino</h4>\n              <ul>\n                  <li>\n                      <h5>Check me out on github</h5></li>\n                  <li><a target=\"_blank\" href=\"https://github.com/sherwino\" class=\"btn btn-danger\" rel=\"nofollow\">Sherwino</a></li>\n                  <li><a href=\"/\" class=\"btn btn-default\" rel=\"nofollow\">This is the way back home</a></li>\n              </ul>\n          </div>\n          <!--/.Call to action-->\n\n    </footer>\n\n\n  </body>\n</html>\n"
 
 /***/ }),
 
@@ -96,6 +96,7 @@ module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -103,21 +104,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(http) {
+        var _this = this;
+        this.http = http;
         this.title = 'microReviews';
+        console.log(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* VERSION */].full);
+        // I saw this example to pull data from a RESTful API easily
+        this.http.get("https://jsonplaceholder.typicode.com/photos")
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) { return _this.myApiData = res; });
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/styles.min.css")]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], AppComponent);
 
+var _a;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -131,18 +146,20 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_completer__ = __webpack_require__("../../../../ng2-completer/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__products_products_component__ = __webpack_require__("../../../../../src/app/products/products.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reviews_reviews_component__ = __webpack_require__("../../../../../src/app/reviews/reviews.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__articles_articles_component__ = __webpack_require__("../../../../../src/app/articles/articles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__submit_review_submit_review_component__ = __webpack_require__("../../../../../src/app/submit-review/submit-review.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__products_products_component__ = __webpack_require__("../../../../../src/app/products/products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reviews_reviews_component__ = __webpack_require__("../../../../../src/app/reviews/reviews.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__articles_articles_component__ = __webpack_require__("../../../../../src/app/articles/articles.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__submit_review_submit_review_component__ = __webpack_require__("../../../../../src/app/submit-review/submit-review.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -154,6 +171,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
  //a form handling module from angular core
  //a HTTP routing module
+
+
 
 //a module that will let me select files and upload them
 // ng2-file-upload is a third party module need to install to use
@@ -179,26 +198,35 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__products_products_component__["a" /* ProductsComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__reviews_reviews_component__["a" /* ReviewsComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__articles_articles_component__["a" /* ArticlesComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__comments_comments_component__["a" /* CommentsComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__product_list_product_list_component__["a" /* ProductListComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__submit_review_submit_review_component__["a" /* SubmitReviewComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__home_home_component__["a" /* HomeComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__products_products_component__["a" /* ProductsComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__reviews_reviews_component__["a" /* ReviewsComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__articles_articles_component__["a" /* ArticlesComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__comments_comments_component__["a" /* CommentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__product_list_product_list_component__["a" /* ProductListComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__submit_review_submit_review_component__["a" /* SubmitReviewComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__home_home_component__["a" /* HomeComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_completer__["a" /* Ng2CompleterModule */]
+            __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_completer__["a" /* Ng2CompleterModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["e" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["g" /* MdGridListModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["h" /* MdSidenavModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_13__services_product_service__["a" /* ProductService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_15__services_product_service__["a" /* ProductService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -255,7 +283,7 @@ var ArticlesComponent = (function () {
     return ArticlesComponent;
 }());
 ArticlesComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-articles',
         template: __webpack_require__("../../../../../src/app/articles/articles.component.html"),
         styles: [__webpack_require__("../../../../../src/app/articles/articles.component.css")]
@@ -316,7 +344,7 @@ var CommentsComponent = (function () {
     return CommentsComponent;
 }());
 CommentsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-comments',
         template: __webpack_require__("../../../../../src/app/comments/comments.component.html"),
         styles: [__webpack_require__("../../../../../src/app/comments/comments.component.css")]
@@ -377,7 +405,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
@@ -438,7 +466,7 @@ var LoginComponent = (function () {
     return LoginComponent;
 }());
 LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-login',
         template: __webpack_require__("../../../../../src/app/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
@@ -458,7 +486,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/*md-grid-tile {\n  background: lightblue;\n}*/\n\n/*.mat-grid-list {\n  min-height: ;\n}*/\n\n.product-card {\n  height: 100%;\n  background: rgba(255, 255, 255, 0.80);\n  margin: 5px 10px;\n  padding: 0px;\n}\n\n.mat-card-image {\n  width: 100%;\n  margin: 0px -8px 16px 0px;\n}\n\n.mat-card-content {\n  padding: 20px;\n}\n\n.example-container {\n  width: 500px;\n  height: 300px;\n  border: 1px solid rgba(0, 0, 0, 0.5);\n}\n\n.example-sidenav-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.example-sidenav {\n  padding: 20px;\n}\n", ""]);
 
 // exports
 
@@ -471,7 +499,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-list/product-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Browse for Products</h2>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<!-- If there as an error let the user know on the top of the page -->\n<div class=\" error\" *ngIf=\"errorMessage\"> {{ errorMessage }} </div>\n\n<!-- List all of the products -->\n<div class = \"product-list\">\n  <div *ngFor =\"let oneProduct of products\">\n    <img [src]=\"oneProduct.image\">\n    <h3> {{ oneProduct.name }} </h3>\n    <h4><i> {{ oneProduct.brand }} </i> </h4>\n\n    <!-- Using the router, find the product by the id and lets see details page -->\n    <!-- <a [routerLink]='product, oneProduct._id'>Details</a> -->\n\n  </div>\n</div>\n"
+module.exports = "<h2>Browse for Products</h2>\n<br>\n\n<!-- If there as an error let the user know on the top of the page -->\n<div class=\" error\" *ngIf=\"errorMessage\"> {{ errorMessage }} </div>\n<div class = \"product-list\">\n  <md-grid-list cols=\"3\" rowHeight=\"2:3\">\n    <md-grid-tile *ngFor =\"let oneProduct of products\">\n      <md-card class=\"product-card\">\n        <md-card-header>\n          <div md-card-avatar class=\"brand-logo\"></div>\n          <md-card-title>\n            <h3> {{ oneProduct.prodName }} </h3>\n          </md-card-title>\n          <md-card-subtitle>\n            <h4><i> {{ oneProduct.prodBrand }} </i> </h4>\n            <h4><i> {{ oneProduct.prodModel }} </i> </h4>\n          </md-card-subtitle>\n        </md-card-header>\n        <img md-card-image [src]=\"oneProduct.prodImg\">\n        <md-card-content>\n          <h4><i> {{ oneProduct.prodUPC }} </i> </h4>\n          <h4><i> {{ oneProduct.prodMfg }} </i> </h4>\n          <h4><i> {{ oneProduct.prodParts }} </i> </h4>\n        </md-card-content>\n        <md-card-actions>\n          <button md-button>LIKE</button>\n          <button md-button>SHARE</button>\n        </md-card-actions>\n      </md-card>\n    </md-grid-tile>\n  </md-grid-list>\n\n<!-- List all of the products -->\n    <!-- Using the router, find the product by the id and lets see details page -->\n    <!-- <a [routerLink]='product, oneProduct._id'>Details</a> -->\n  </div>\n\n  <md-sidenav-container class=\"example-container\">\n    <md-sidenav #sidenav class=\"example-sidenav\">\n      Jolly good!\n    </md-sidenav>\n\n    <div class=\"example-sidenav-content\">\n      <button type=\"button\" md-button (click)=\"sidenav.open()\">\n        Open sidenav\n      </button>\n    </div>\n\n  </md-sidenav-container>\n\n<!-- If you want to limit the results on a ngFor loop -->\n<!-- <div *ngFor=\"let data of (myData ? myData.slice(0,10); []); let i = index\">\n</div> -->\n"
 
 /***/ }),
 
@@ -513,7 +541,7 @@ var ProductListComponent = (function () {
     return ProductListComponent;
 }());
 ProductListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-product-list',
         template: __webpack_require__("../../../../../src/app/product-list/product-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/product-list/product-list.component.css")]
@@ -575,7 +603,7 @@ var ProductsComponent = (function () {
     return ProductsComponent;
 }());
 ProductsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-products',
         template: __webpack_require__("../../../../../src/app/products/products.component.html"),
         styles: [__webpack_require__("../../../../../src/app/products/products.component.css")]
@@ -636,7 +664,7 @@ var ProfileComponent = (function () {
     return ProfileComponent;
 }());
 ProfileComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-profile',
         template: __webpack_require__("../../../../../src/app/profile/profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/profile/profile.component.css")]
@@ -697,7 +725,7 @@ var ReviewsComponent = (function () {
     return ReviewsComponent;
 }());
 ReviewsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-reviews',
         template: __webpack_require__("../../../../../src/app/reviews/reviews.component.html"),
         styles: [__webpack_require__("../../../../../src/app/reviews/reviews.component.css")]
@@ -717,6 +745,7 @@ ReviewsComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("../../../../rxjs/add/operator/toPromise.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -730,11 +759,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductService = (function () {
     function ProductService(myHttp) {
         this.myHttp = myHttp;
         // maybe I should have an env variable here instead of localhost
-        this.BASE_URL = 'http://localhost:3000';
+        this.BASE_URL = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiUrl;
     }
     ProductService.prototype.getList = function () {
         return this.myHttp.get(this.BASE_URL + "/api/products")
@@ -818,7 +848,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/submit-review/submit-review.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Submit a New Review</h2>\n\n\n<a [routerLink]=\"['/browse']\"> Back to list </a>\n<div class=\"review-form\">\n  <form (ngSubmit)=\"newReviewObject(datafromform)\" #myForm=\"ngForm\">\n    <div class=\"form-group\">\n      <p>\n        Brand: <small><i>Apple</i></small>\n        <ng2-completer [(ngModel)]=\"searchStr\" [datasource]=\"captains\" [minSearchLength]=\"0\"\n        class=\"form-control\" type=\"text\" name=\"brand\" required ></ng2-completer>\n      </p>\n      <p>\n        Model Name: <small><i>iPhone 6s Plus</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"modelName\" [(ngModel)]=\"modelName\" required />\n      </p>\n      <p>\n        Model Number: <small><i>A1633</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"modelNum\" [(ngModel)]=\"modelNum\" required />\n      </p>\n      <p>\n        Product's UPC: <small><i>700362685371</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"prodUPC\" [(ngModel)]=\"prodUPC\" required />\n      </p>\n      <p>\n        Manufactured By: <small><i>Foxcomm, Samsung, Carl Zeiss, Dolby Labs</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"mfgBy\" [(ngModel)]=\"mfgBy\" required />\n      </p>\n      <p>\n        Product Components: <small><i>Camera, Microphone, Speaker, Compass</i></small>\n        <input class=\"form-control\" type=\"text\" name=\"prodParts\" [(ngModel)]=\"prodParts\" required />\n      </p>\n    </div>\n    <div class=\"form-group\">\n      <p>\n        Product Image: <small><i>Upload an image of the product</i></small>\n        <input class=\"form-control-file\" type=\"text\" name=\"prodImg\" [(ngModel)]=\"prodImg\" required />\n      </p>\n    </div>\n    <button class=\"btn btn-primary\" (click)=\"submit()\"> submit </button>\n  </form>\n</div>\n\n<a [routerLink]=\"['/browse']\"> Back to list </a>\n\n<p> {{ feedback }} </p>\n"
+module.exports = "<h2>Submit a New Review</h2>\n\n\n<a [routerLink]=\"['/browse']\"> Back to list </a>\n\n<div class=\"review-form\">\n  <form (ngSubmit)=\"newProductform()\" #myForm=\"ngForm\">\n    <div class=\"form-group\">\n      <p>\n        <label for=\"brand\"> Brand: <small><i>Apple</i></small></label>\n        <input class=\"form-control\" id=\"brand\" type=\"text\" name=\"brand\" [(ngModel)]=\"newProduct.brand\" required />\n      </p>\n      <p>\n        <label for=\"modelName\"> Model Name: <small><i>iPhone 6s Plus</i></small></label>\n        <input class=\"form-control\" id=\"modelName\" type=\"text\" name=\"modelName\" [(ngModel)]=\"newProduct.modelName\" required />\n      </p>\n      <p>\n        <label for=\"modelNum\"> Model Number: <small><i>A1633</i></small></label>\n        <input class=\"form-control\" id=\"modelNum\" type=\"text\" name=\"modelNum\" [(ngModel)]=\"newProduct.modelNum\">\n      </p>\n      <p>\n        <label for=\"prodUPC\"> Product's UPC: <small><i>700362685371</i></small></label>\n        <input class=\"form-control\" id=\"prodUPC\" type=\"text\" name=\"prodUPC\" [(ngModel)]=\"newProduct.prodUPC\">\n      </p>\n      <p>\n        <label for=\"mfgBy\"> Manufactured By: <small><i>Foxcomm, Samsung, Carl Zeiss, Dolby Labs</i></small></label>\n        <input class=\"form-control\" id=\"mfgBy\" type=\"text\" name=\"mfgBy\" [(ngModel)]=\"newProduct.mfgBy\">\n      </p>\n      <p>\n        <label for=\"prodParts\"> Product Components: <small><i>Camera, Microphone, Speaker, Compass</i></small></label>\n        <input class=\"form-control\" id=\"prodParts\" type=\"text\" name=\"prodParts\" [(ngModel)]=\"newProduct.prodParts\">\n      </p>\n    </div>\n    <div class=\"form-group\">\n      <p>\n        <label for=\"prodImg\"> Product Image: <small><i>Upload an image of the product</i></small></label>\n        <input class=\"form-control-file\" id=\"prodImg\" type=\"text\" name=\"prodImg\" [(ngModel)]=\"newProduct.prodImg\">\n      </p>\n    </div>\n    <button class=\"btn btn-primary\">Submit </button>\n  </form>\n</div>\n\n<a [routerLink]=\"['/browse']\"> Back to list </a>\n\n<p> {{ feedback }} </p>\n\n\n<!-- <ng2-completer [(ngModel)]=\"searchStr\" [datasource]=\"captains\" [minSearchLength]=\"0\"\nclass=\"form-control\" type=\"text\" name=\"brand\" required ></ng2-completer> -->\n"
 
 /***/ }),
 
@@ -828,7 +858,8 @@ module.exports = "<h2>Submit a New Review</h2>\n\n\n<a [routerLink]=\"['/browse'
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_completer__ = __webpack_require__("../../../../ng2-completer/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubmitReviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -847,91 +878,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SubmitReviewComponent = (function () {
     function SubmitReviewComponent(
         // creating a routing instance in this view
-        myRoute, myProductService, myRouter, 
-        // the AutoCompleteService
-        completerService) {
+        myRoute, myProductService, myRouter) {
         this.myRoute = myRoute;
         this.myProductService = myProductService;
         this.myRouter = myRouter;
-        this.completerService = completerService;
-        this.searchData = [
-            { color: 'red', value: '#f00' },
-            { color: 'green', value: '#0f0' },
-            { color: 'blue', value: '#00f' },
-            { color: 'cyan', value: '#0ff' },
-            { color: 'magenta', value: '#f0f' },
-            { color: 'yellow', value: '#ff0' },
-            { color: 'black', value: '#000' }
-        ];
-        this.captains = ['James T. Kirk', 'Benjamin Sisko', 'Jean-Luc Picard', 'Spock', 'Jonathan Archer', 'Hikaru Sulu', 'Christopher Pike', 'Rachel Garrett'];
-        this.dataService = completerService.local(this.searchData, 'color', 'color');
-    }
-    ;
+        //this object is going to hold the key value pairs for the Reviews
+        this.newProduct = {};
+    } // <<<<----This goes in there this.dataService = completerService.local(this.searchData, 'color', 'color')
     SubmitReviewComponent.prototype.ngOnInit = function () {
-        var _this = this;
         // similar to document.ready
         // listen to all of the paramaters passed through the active route
         // return the parameters as an object
-        this.myRoute.params.subscribe(function (params) { return _this.newReview = {}; });
+        // this.myRoute.params.subscribe((params) => this.newProduct = {} );
     };
     // when you submit the form from the dom it calls this function which will capture all of the values
-    SubmitReviewComponent.prototype.newReviewObject = function (datafromform) {
-        //lets see what we are receiving from the form
-        console.log(datafromform);
-        // all of the variables that we created interface of above will grab values from form and store them
-        this.brand = datafromform.form.controls.brand._value;
-        this.modelName = datafromform.form.controls.modelName._value;
-        this.modelNum = datafromform.form.controls.modelNum._value;
-        this.prodUPC = datafromform.form.controls.prodUPC._value;
-        this.mfgBy = datafromform.form.controls.mfgBy._value.split(",");
-        // this.mfgStart =  datafromform.form.controls.mfgStart._value;
-        // this.mfgEnd =    datafromform.form.controls.mfgEnd._value;
-        this.prodParts = datafromform.form.controls.prodParts._value.split(",");
-        this.prodImg = datafromform.form.controls.prodImg._value;
-        // then lets call the function that is going to submit all of this info to the backend express app
-        // note the scope
-        this.reviewtoApi();
-    };
-    // since this object is going directly to the backend the key ie brand: needs to match the mongo one
-    SubmitReviewComponent.prototype.reviewtoApi = function () {
+    SubmitReviewComponent.prototype.newProductform = function () {
         var _this = this;
-        this.newReview = {
-            brand: this.brand,
-            model: this.modelName,
-            modelNum: this.modelNum,
-            productUPC: this.prodUPC,
-            manufacturedBy: this.mfgBy,
-            // manufacturingStart:  this.mfgStart,
-            // manufacturingStop:   this.mfgEnd,
-            productParts: this.prodParts,
-            productImg: this.prodImg
-        };
-        // product service create this new object, and then empty the values for the next form submission
-        this.myProductService.createNew(this.newReview).then(function () {
-            _this.brand = "";
-            _this.modelName = "";
-            _this.prodUPC = "";
-            _this.mfgBy = [];
-            // this.mfgStart = "";
-            // this.mfgEnd = "";
-            _this.prodParts = [];
-            _this.prodImg = "";
-            _this.newReview = {};
+        //lets see what we are receiving from the form
+        this.myProductService.createNew(this.newProduct).then(function (dataFromApi) {
+            console.log(_this.newProduct);
+            _this.myRouter.navigate(['/browse']);
+        })
+            .catch(function (errResponse) {
+            var apiInfo = errResponse.json();
+            _this.errorMessage = apiInfo.message;
         });
     };
     return SubmitReviewComponent;
 }());
 SubmitReviewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
         selector: 'app-submit-review',
         template: __webpack_require__("../../../../../src/app/submit-review/submit-review.component.html"),
         styles: [__webpack_require__("../../../../../src/app/submit-review/submit-review.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_completer__["b" /* CompleterService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_completer__["b" /* CompleterService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_product_service__["a" /* ProductService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _c || Object])
 ], SubmitReviewComponent);
 
-var _a, _b, _c, _d;
-//https://api.upcitemdb.com/prod/trial/search?s=MacBook%20Pro&brand=Apple&match_mode=0&type=product
+var _a, _b, _c;
 //# sourceMappingURL=submit-review.component.js.map
 
 /***/ }),
