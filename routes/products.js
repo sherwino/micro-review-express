@@ -70,6 +70,29 @@ productAPIroutes.get('/api/products',
     }); //close exec()
   }); //close get '/api/lits'
 
+  // // SEARCH PRODUCTS ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  // // when angular makes a get request at this route /api/products
+  // productAPIroutes.get('/search',
+  //   // ensure.ensureLoggedIn('/login'),
+  //
+  //   (req, res, next ) => {
+  //     //give me all of the products, but sort them
+  //     // { owner:    req.user._id },
+  //     ProductModel
+  //     .find()
+  //     .sort( { _id: 1}) // this might not make sense until we have the dates value we want to show the most relevant products
+  //     .exec((err, productList) => {
+  //       if (err) {
+  //         res.status(500).json({ message: 'Could not find any products'});
+  //         return;
+  //       }
+  //       // instead of rendering a view, you are storing all of the results in a json file
+  //       // if you navigate to api/products in your browser you should see all of the json files
+  //       res.status(200).json(productList);
+  //     }); //close exec()
+  //   }); //close get '/api/lits'
+
+
 
 // CREATE NEW PRODUCT ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
