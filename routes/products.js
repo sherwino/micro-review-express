@@ -72,25 +72,29 @@ productAPIroutes.get('/api/products',
 
   // // SEARCH PRODUCTS ROUTE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   // // when angular makes a get request at this route /api/products
-  // productAPIroutes.get('/search',
-  //   // ensure.ensureLoggedIn('/login'),
-  //
-  //   (req, res, next ) => {
-  //     //give me all of the products, but sort them
-  //     // { owner:    req.user._id },
-  //     ProductModel
-  //     .find()
-  //     .sort( { _id: 1}) // this might not make sense until we have the dates value we want to show the most relevant products
-  //     .exec((err, productList) => {
-  //       if (err) {
-  //         res.status(500).json({ message: 'Could not find any products'});
-  //         return;
-  //       }
-  //       // instead of rendering a view, you are storing all of the results in a json file
-  //       // if you navigate to api/products in your browser you should see all of the json files
-  //       res.status(200).json(productList);
-  //     }); //close exec()
-  //   }); //close get '/api/lits'
+  productAPIroutes.get('/api/search',
+    // "nintendo" turns in the reg expression nintendo so anything that matches would be foudn
+    (req, res, next ) => {
+      const searchTerm = req.query.projectSearchTerm;
+      const searchRegex = new RegExp(searchTerm, 'i');
+      console.log(searchRegex);
+      if (!searchTerm) {
+        res.status(200).json(searchResults);
+        return;
+      }
+      //give me all of the products, but sort them
+      // { owner:    req.user._id },
+      ProductModel.find({ prodName: searchRegex },
+      (err, searchResults) => {
+        if (err) {
+          res.status(500).json({ message: 'Could not find any products'});
+          return;
+        }
+        // instead of rendering a view, you are storing all of the results in a json file
+        // if you navigate to api/products in your browser you should see all of the json files
+        res.status(200).json(searchResults);
+    }); //close get '/api/search'
+});  //close get '/api/search'
 
 
 
